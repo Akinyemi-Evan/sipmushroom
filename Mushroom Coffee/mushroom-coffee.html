@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Coffee</title>
+    <link rel="stylesheet" href="mushroom-coffee.css">
+    <script src="mushroom-coffee.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Left: Three-line menu -->
+            <div class="menu-icon" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Center: Logo and Title -->
+            <div class="logo">
+                <img src="Pictures/logo.png" alt="Mushroom Coffee Logo">
+                <h1>Mushroom Coffee</h1>
+            </div>
+    
+            <!-- Right: Cart Icon -->
+            <div class="cart">
+                <img src="Pictures/cart-icon.png" alt="Cart" class="cart-icon">
+                <div class="cart-popup">
+                    <p>Your cart is empty</p>
+                    <a href="cart.html" class="view-cart">View Cart</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Navigation Drawer -->
+        <nav id="nav-drawer">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#wellness">Wellness</a></li>
+                <li><a href="#how-to">How-To</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Slideshow and Order Section -->
+        <section class="slideshow-order">
+            <!-- Slideshow Section -->
+            <div class="slideshow">
+                <div class="slideshow-container">
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <img src="Pictures/coffee1.png" alt="Elevated Energy">
+                        <div class="info">
+                            <h2>Elevated Energy</h2>
+                            <p>Energy boost without jitters or crash.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <img src="Pictures/mushroom1.jpg" alt="Cordyceps and Agaricus">
+                        <div class="info">
+                            <h2>Cordyceps & Agaricus</h2>
+                            <p>Enhances stamina, vitality, and focus.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <img src="Pictures/coffee3.jpg" alt="Premium Quality">
+                        <div class="info">
+                            <h2>Premium Quality</h2>
+                            <p>Organic, sustainable, and planet-friendly.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="slide">
+                        <img src="Pictures/coffee4.jpg" alt="Rich Flavor">
+                        <div class="info">
+                            <h2>Rich, Robust Flavor</h2>
+                            <p>Earthy notes with a coffee blend.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="slide">
+                        <img src="Pictures/coffee5.jpg" alt="Vegan Blend">
+                        <div class="info">
+                            <h2>Vegan Blend</h2>
+                            <p>Perfect for experts and newcomers alike.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="slide">
+                        <img src="Pictures/coffee6.jpg" alt="Convenience">
+                        <div class="info">
+                            <h2>Convenience</h2>
+                            <p>Easy integration into daily routines.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slideshow Controls -->
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            
+
+            <!-- Order Section -->
+            <div class="order">
+                <h2>Order Mushroom Coffee</h2>
+                <div class="order-info">
+                    <p><strong>Mushroom Coffee</strong></p>
+                    <p>30 Servings</p>
+                    <p>
+                        <span class="star-rating">
+                            ★★★★☆
+                        </span>
+                        (126,109 Reviews)
+                        <a href="#reviews">Click to go to reviews</a>
+                    </p>
+                    <ul>
+                        <li>+ 30-Day Money Back Guarantee</li>
+                        <li>+ FREE Mushroom Magnet</li>
+                        <li>+ FREE Acacia Spoon</li>
+                        <li>+ FREE Shipping</li>
+                    </ul>
+                    <button class="add-to-cart" onclick="addToCart('Mushroom Coffee', 59.99)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wellness Section -->
+        <section id="wellness" class="wellness">
+            <h2>Wellness</h2>
+            <p>Our mushroom coffee isn’t just a drink; it’s a lifestyle choice for better health, focus, and energy.</p>
+        </section>
+
+        <!-- Quick, Easy, Delicious Section -->
+        <section id="how-to" class="how-to">
+            <div class="how-to-content">
+                <img src="Pictures/wooden-spoon.jpg" alt="Wooden Spoon" />
+                <div class="how-to-steps">
+                    <h2>Quick, Easy, Delicious.</h2>
+                    <p>100% customizable to suit your needs:</p>
+                    <ol>
+                        <li>Add 1 tbsp of RYZE Mushroom Coffee.</li>
+                        <li>Pour 8-10 ounces of hot or cold water.</li>
+                        <li>Stir it up with your beautiful wooden spoon.</li>
+                        <li>Add any creamer or sweetener you'd like.</li>
+                        <li>Sip on the magic.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews Section -->
+        <section id="reviews" class="reviews">
+            <h2>Customer Reviews</h2>
+            <div id="reviews-container">
+                <p>Loading reviews...</p>
+            </div>
+        </section>        
+    </main>   
+    <footer>
+        <p>© 2024 Sip Mushroom | All rights reserved.</p>
+    </footer>
+</body>
+</html>
