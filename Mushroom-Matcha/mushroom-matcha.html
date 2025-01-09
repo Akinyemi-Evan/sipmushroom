@@ -4,23 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mushroom Matcha</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mushroom-matcha.css">
+    <script src="mushroom-matcha.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Mushroom Matcha</h1>
-        <nav>
+        <div class="header-content">
+            <div class="menu-icon" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <img src="../Pictures/LOGO TRANSPARENCY.jpg" alt="LaTonique Logo">
+                <h1>Mushroom Matcha</h1>
+            </div>
+            <div class="cart">
+                <img src="../Pictures/cart-icon.png" alt="Cart" class="cart-icon">
+                <div class="cart-popup">
+                    <p>Your cart is empty</p>
+                    <a href="../cart.html" class="view-cart">View Cart</a>
+                </div>
+            </div>
+        </div>
+        <nav id="nav-drawer">
             <ul>
-                <li><a href="sipmushroom.html">Home</a></li>
-                <li><a href="mushroom-coffee.html">Mushroom Coffee</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Mushroom-Coffee/mushroom-coffee.html">Mushroom Coffee</a></li>
                 <li><a href="mushroom-matcha.html">Mushroom Matcha</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Health Benefits of Mushroom Matcha</h2>
-            <p>Enjoy the perfect blend of matcha and mushroom for a calm, focused energy.</p>
+        <section class="slideshow-order">
+            <div class="slideshow">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="../Pictures/matcha1.png" alt="Calm Energy">
+                        <div class="info">
+                            <h2>Calm Energy</h2>
+                            <p>Focus and relax with every sip.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="../Pictures/matcha2.png" alt="Antioxidant Rich">
+                        <div class="info">
+                            <h2>Antioxidant Rich</h2>
+                            <p>Boost your health naturally.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <div class="order">
+                <h2>Order Mushroom Matcha</h2>
+                <div class="order-info">
+                    <p><strong>Mushroom Matcha</strong></p>
+                    <p>20 Servings</p>
+                    <p>
+                        <span class="star-rating">★★★★☆</span>
+                        (50,234 Reviews)
+                        <a href="#reviews">Read Reviews</a>
+                    </p>
+                    <ul>
+                        <li>+ Money Back Guarantee</li>
+                        <li>+ FREE Bamboo Whisk</li>
+                        <li>+ FREE Shipping</li>
+                    </ul>
+                    <button class="add-to-cart" onclick="addToCart('Mushroom Matcha', 49.99)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+        <section id="wellness" class="wellness">
+            <h2>Wellness Benefits</h2>
+            <p>Blend of matcha and mushroom designed for mental clarity and immune support.</p>
+        </section>
+        <section id="reviews" class="reviews">
+            <h2>Customer Reviews</h2>
+            <div id="reviews-container">
+                <p>Loading reviews...</p>
+            </div>
         </section>
     </main>
     <footer>
