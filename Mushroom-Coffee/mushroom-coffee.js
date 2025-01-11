@@ -92,40 +92,33 @@ function closeNavOnOutsideClick(event) {
         document.removeEventListener('click', closeNavOnOutsideClick);
     }
 }
-const apiKey = 'AIzaSyDpoLnQlcYl317wKEvN3aS5ujnfTQrOk-E';
-const placeId = 'CSZzpBmBnN-mEAE'; // Replace with your Place ID
-const reviewsContainer = document.getElementById('reviews-container');
+let currentHeroSlideIndex = 0;
 
-async function fetchReviews() {
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
+function showHeroSlide(index) {
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    heroSlides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none'; // Show the current slide, hide others
+    });
+}
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+function moveHeroSlide(direction) {
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    currentHeroSlideIndex += direction;
 
-        if (data.result && data.result.reviews) {
-            displayReviews(data.result.reviews);
-        } else {
-            reviewsContainer.innerHTML = '<p>No reviews found.</p>';
-        }
-    } catch (error) {
-        console.error('Error fetching reviews:', error);
-        reviewsContainer.innerHTML = '<p>Failed to load reviews.</p>';
+    // Wrap around the slideshow
+    if (currentHeroSlideIndex < 0) {
+        currentHeroSlideIndex = heroSlides.length - 1;
+    } else if (currentHeroSlideIndex >= heroSlides.length) {
+        currentHeroSlideIndex = 0;
     }
+
+    showHeroSlide(currentHeroSlideIndex);
 }
 
-function displayReviews(reviews) {
-    reviewsContainer.innerHTML = reviews
-        .map(review => {
-            return `
-            <div class="review">
-                <p><strong>${review.author_name}</strong></p>
-                <p>Rating: ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</p>
-                <p>${review.text}</p>
-            </div>
-            `;
-        })
-        .join('');
-}
+// Auto-play Hero Slideshow every 5 seconds
+setInterval(() => moveHeroSlide(1), 5000);
 
-fetchReviews();
+// Initialize the first slide on page load
+document.addEventListener('DOMContentLoaded', () => {
+    showHeroSlide(currentHeroSlideIndex);
+});

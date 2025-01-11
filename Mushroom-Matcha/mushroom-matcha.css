@@ -176,9 +176,11 @@ header {
 .slideshow-container {
     max-width: 100%;
     margin: auto;
+    position: relative;
     overflow: hidden;
     border-radius: 1rem;
-    height: 60vh;
+    height: auto;
+    display: flex;
 }
 
 .slide {
@@ -200,17 +202,6 @@ header {
     border-radius: 1rem;
 }
 
-.slide .info {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    max-width: 80%;
-}
 
 .prev, .next {
     position: absolute;
@@ -284,11 +275,23 @@ header {
     justify-content: center;
     text-align: center;
     padding: 4rem 2rem;
-    background: rgba(0, 128, 0, 0.3); /* Matcha green overlay */
-    color: #fff;
+    background: #d4f7d4; /* Light Matcha Green */
+    color: #006400; /* Medium Green */
     border-radius: 10px;
-    margin: 2rem auto;
+    margin-top: 2rem auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 2 rem;
+    margin-bottom: 1.5rem;
+    color: #2e8b57; /* Softer green for text */
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #2e8b57; /* Softer green for text */
 }
 .hero-slideshow {
     display: flex;
@@ -298,33 +301,46 @@ header {
 }
 
 .hero-slide {
-    min-width: 100%;
-    transition: transform 0.5s ease-in-out;
+    display: none; /* Hide all slides by default */
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in/out effect */
 }
 
 .hero-slide img {
     width: 30%;
     border-radius: 1rem;
 }
-/* Quick, Easy, Delicious Section */
+/* How-To Section */
 .how-to {
     display: flex;
-    gap: 5vw;
+    flex-direction: column;
+    gap: 5rem;
     align-items: center;
-    padding: 5vh 5vw;
+    padding: 4rem 5rem;
+    background: #e8f8e8; /* Very light green */
+    border-radius: 10px;
+}
+
+.how-to h2 {
+    color: #228B22; /* Medium bright green */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.how-to ol {
+    line-height: 1.5;
+    color: #228B22; /* Forest Green for steps */
 }
 
 /* Mushroom Facts Section */
 .mushroom-facts {
     padding: 4rem 2rem;
-    color: #45a049;
+    background-color: #f0fff0; /* Very light green background */
+    color: #2e8b57; /* Softer green */
     border-radius: 10px;
     text-align: center;
-}
-
-.mushroom-facts h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .facts-container {
@@ -334,16 +350,35 @@ header {
     justify-content: center;
 }
 
+.mushroom-facts h2 {
+    font-size: 2 rem;
+    margin-bottom: 1.5rem;
+    color: #2e8b57; /* Medium green */
+}
+
+.mushroom-facts p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #2e8b57; /* Medium green */
+}
+
 .fact {
     text-align: center;
     width: 200px;
 }
 
+.fact h3 {
+    font-size: 1.2rem;
+    color: #2e8b57; /* Medium green */
+    margin-top: 0.5rem;
+}
+
 .fact img {
-    width: 100%;
+    width: auto;
     height: 150px;
-    object-fit: cover;
+    object-fit: scale-down;
     border-radius: 10px;
+    background-color: transparent;
     margin-bottom: 1rem;
 }
 
@@ -494,13 +529,28 @@ header {
 footer {
     text-align: center;
     padding: 3vh 0;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #4CAF50; /* Bright green */
+    color: #ffffff;
     border-top: 2px solid #f0f0f0;
 }
 
-footer p {
-    font-size: 1rem;
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-nav a {
+    color: #e0ffe0; /* Soft green for links */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffffff; /* White for hover effect */
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {

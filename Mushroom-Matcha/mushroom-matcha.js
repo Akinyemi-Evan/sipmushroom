@@ -86,3 +86,34 @@ function closeNavOnOutsideClick(event) {
         document.removeEventListener('click', closeNavOnOutsideClick);
     }
 }
+
+let currentHeroSlideIndex = 0;
+
+function showHeroSlide(index) {
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    heroSlides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none'; // Show the current slide, hide others
+    });
+}
+
+function moveHeroSlide(direction) {
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    currentHeroSlideIndex += direction;
+
+    // Wrap around the slideshow
+    if (currentHeroSlideIndex < 0) {
+        currentHeroSlideIndex = heroSlides.length - 1;
+    } else if (currentHeroSlideIndex >= heroSlides.length) {
+        currentHeroSlideIndex = 0;
+    }
+
+    showHeroSlide(currentHeroSlideIndex);
+}
+
+// Auto-play Hero Slideshow every 5 seconds
+setInterval(() => moveHeroSlide(1), 5000);
+
+// Initialize the first slide on page load
+document.addEventListener('DOMContentLoaded', () => {
+    showHeroSlide(currentHeroSlideIndex);
+});

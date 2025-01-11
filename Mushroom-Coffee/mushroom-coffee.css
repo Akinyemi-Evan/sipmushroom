@@ -295,7 +295,7 @@ header {
 
 .fact img {
     width: 100%;
-    height: 150px;
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1rem;
@@ -331,8 +331,10 @@ header {
 }
 
 .hero-slide {
-    min-width: 100%;
-    transition: transform 0.5s ease-in-out;
+    display: none; /* Hide all slides by default */
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in/out effect */
 }
 
 .hero-slide img {
@@ -375,6 +377,9 @@ header {
     gap: 5vw;
     align-items: center;
     padding: 5vh 5vw;
+}
+.how-to ol {
+    line-height: 1.5;
 }
 /* Reviews Section */
 .woocommerce-Reviews {
