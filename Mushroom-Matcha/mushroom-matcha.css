@@ -15,7 +15,7 @@ body {
 header {
     position: relative;
     background-color: #ffffff;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 0.3vh solid #f0f0f0;
     padding: 1vh 2vw;
     display: flex;
     align-items: center;

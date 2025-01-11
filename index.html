@@ -8,34 +8,65 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="Pictures/LOGO-TRANSPARENCY.png" alt="LaTonique Mushroom Logo">
+        <div class="header-content">
+            <!-- Left: Menu Icon -->
+            <div class="menu-icon" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Center: Logo -->
+            <div class="logo">
+                <img src="Pictures/LOGO-TRANSPARENCY.png" alt="LaTonique Mushroom Logo">
+                <h1>Sip Mushroom</h1>
+            </div>
+
+            <!-- Cart -->
+            <div class="cart">
+                <img src="Pictures/shopping-cart.png" alt="Cart" class="cart-icon">
+                <div class="cart-popup">
+                    <p>Your cart is empty</p>
+                    <a href="cart.html" class="view-cart">View Cart</a>
+                </div>
+            </div>
         </div>
-        <nav>
+        <!-- Navigation Drawer -->
+        <nav id="nav-drawer">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="Mushroom-Coffee\mushroom-coffee.html">Mushroom Coffee</a></li>
-                <li><a href="Mushroom-Matcha\mushroom-matcha.html">Mushroom Matcha</a></li>
+                <li><a href="Mushroom-Coffee/mushroom-coffee.html">Mushroom Coffee</a></li>
+                <li><a href="Mushroom-Matcha/mushroom-matcha.html">Mushroom Matcha</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <div class="carousel">
-                <div class="carousel-images">
-                    <img src="Pictures/coffee1.png" alt="Mushroom Coffee">
-                    <img src="Pictures/coffee2.png" alt="Mushroom Coffee Back">
-                    <img src="Pictures/matcha1.png" alt="Mushroom Matcha">
-                    <img src="Pictures/matcha2.png" alt="Mushroom Matcha Back">
-                    
-                </div>
-                <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
-                <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Sip Mushroom</h1>
+                <p>Experience the blend of health, flavor, and technology.</p>
+                <button class="cta">Explore Now</button>
             </div>
+        </section>
+        <!-- Carousel Section -->
+        <section class="carousel">
+            <div class="carousel-images">
+                <img src="Pictures/coffee1.png" alt="Mushroom Coffee">
+                <img src="Pictures/matcha1.png" alt="Mushroom Matcha">
+                <img src="Pictures/coffee2.png" alt="Coffee Back">
+            </div>
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
         </section>
     </main>
     <footer>
         <p>© 2024 Sip Mushroom | All rights reserved.</p>
+        <nav class="footer-nav">
+            <a href="credits.html">Credits</a>
+            <a href="#privacy">Privacy Policy</a>
+        </nav>
     </footer>
     <script src="sipmushroom.js"></script>
 </body>

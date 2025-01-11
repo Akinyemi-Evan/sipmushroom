@@ -6,16 +6,16 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
+    font-family: 'Playfair Display', 'Georgia', serif; 
+    color: #5C4033; /* Dark Brown for text */
+    background-color: #f9f9f9; /*background color*/
 }
 
 /* General Header Layout */
 header {
     position: relative;
     background-color: #ffffff;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 0.3vh solid #f0f0f0; /* Light gray border */
     padding: 1vh 2vw;
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@ header {
     display: block;
     width: 1.5rem;
     height: 0.2rem;
-    background-color: #4CAF50;
+    background-color: #8B4513;
     border-radius: 3px;
 }
 
@@ -60,7 +60,7 @@ header {
 
 .logo h1 {
     font-size: 1.5rem;
-    color: #4CAF50;
+    color: #5C4033;
     margin-top: 0.5rem;
 }
 
@@ -105,16 +105,16 @@ header {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: bold;
-    color: #4CAF50;
-    border: 1px solid #4CAF50;
+    color: #8B4513; /* Medium brown text */
+    border: 1px solid #8B4513;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
 }
 
 .cart-popup .view-cart:hover {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #8B4513; /* Medium brown background on hover */
+    color: #FFF; /* White text */
 }
 
 /* Navigation Drawer */
@@ -144,14 +144,14 @@ header {
 
 #nav-drawer ul li a {
     text-decoration: none;
-    color: #4CAF50;
+    color: #5C4033;
     font-size: 1.2rem;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 #nav-drawer ul li a:hover {
-    color: #45a049;
+    color: #8B4513;
 }
 
 /* Open Drawer */
@@ -176,9 +176,11 @@ header {
 .slideshow-container {
     max-width: 100%;
     margin: auto;
+    position: relative;
     overflow: hidden;
     border-radius: 1rem;
-    height: 60vh;
+    height: auto;
+    display: flex;
 }
 
 .slide {
@@ -200,17 +202,7 @@ header {
     border-radius: 1rem;
 }
 
-.slide .info {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    max-width: 80%;
-}
+
 
 .prev, .next {
     position: absolute;
@@ -230,7 +222,7 @@ header {
     color: rgba(37, 36, 36, 0.8);
 }
 .prev {
-    left: 1rem;
+    left: .2rem;
 }
 
 .next {
@@ -261,7 +253,7 @@ header {
     width: fit-content;
     margin: 2vh auto 0;
     padding: 1rem 2rem;
-    background-color: #4CAF50; /* Green color for the button */
+    background-color: #8B4513; /* Medium brown */
     color: #fff;
     border: none;
     border-radius: 0.5rem;
@@ -272,25 +264,106 @@ header {
 }
 
 .add-to-cart:hover {
-    background-color: #45a049;
+    background-color: #5C4033; /* Darker brown */
 }
-
-/* Wellness Section */
-.wellness {
+/* Mushroom Facts Section */
+.mushroom-facts {
+    padding: 4rem 2rem;
     text-align: center;
-    padding: 5vh 5vw;
-    background-color: #4CAF50; /* Green background for wellness section */
-    color: #fff; /* White text for contrast */
-    border-radius: 10px;
 }
 
-.wellness h2 {
+.mushroom-facts h2 {
     font-size: 2rem;
-    margin-bottom: 2vh;
+    color: #8B4513;
+    margin-bottom: 2rem;
 }
 
-.wellness p {
-    font-size: 1.2rem;
+.facts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.fact {
+    text-align: center;
+    width: 200px;
+}
+
+.fact img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #D2B48C; /* Light tan */
+    color: #5C4033; /* Dark Brown text */
+    border-radius: 10px;
+    margin: 2rem auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h2 {
+    font-size: 2 rem;
+    margin-bottom: 1 rem;
+    color: #8B4513; /* Medium Brown */
+    font-weight: bold;
+}
+
+.hero-slideshow {
+    display: flex;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero-slide img {
+    width: 30%;
+    border-radius: 1rem;
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: #5C4033;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: #5C4033; /* Dark Brown text */
+    margin: 1rem 0 2rem;
+}
+
+.hero-content .cta {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #8B4513; /* Medium Brown */
+    color: #FFF; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .cta:hover {
+    background-color: #5C4033; /* Darker Brown */
 }
 
 /* Quick, Easy, Delicious Section */
@@ -300,32 +373,155 @@ header {
     align-items: center;
     padding: 5vh 5vw;
 }
-.reviews {
+/* Reviews Section */
+.woocommerce-Reviews {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -30px; /* Consistent spacing */
+    margin-bottom: -25px;
+    background-color: var(--wd-main-bgcolor, #fff); /* Default to white */
+    border-radius: var(--wd-brd-radius, 10px); /* Soft corners */
+    box-shadow: var(--wp--preset--shadow--natural, 6px 6px 9px rgba(0, 0, 0, 0.2)); /* Subtle shadow */
+    padding: 3rem 5rem;
+    line-height: var(--wd-text-line-height, 1.6);
+}
+
+/* Review Section Heading */
+.woocommerce-Reviews h2 {
+    font-size: var(--wp--preset--font-size--large, 1.5rem);
+    color: var(--wd-title-color, #242424);
+    margin-bottom: var(--wd-single-spacing, 25px);
     text-align: center;
-    padding: 5vh 5vw;
-    background-color: #f9f9f9;
 }
 
-.review {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #ffffff;
+
+/* Review Content */
+.wd-reviews-content {
+    flex: 1 1 100%;
+    margin-bottom: var(--wd-block-spacing, 20px);
+    text-align: center;
+    color: var(--wd-text-color, #777);
+}
+
+.woocommerce-noreviews {
+    font-size: var(--wp--preset--font-size--medium, 1rem);
+    color: var(--wd-text-color, #777);
+}
+
+/* Review Form Wrapper */
+#review_form_wrapper {
+    flex: 1 1 100%;
+    margin-top: var(--wd-single-spacing, 25px);
+    background-color: var(--bgcolor-gray-100, #f7f7f7);
+    border: var(--brdcolor-gray-200, 1px solid rgba(0, 0, 0, 0.075));
+    padding: var(--wd-block-spacing, 20px);
+    border-radius: var(--wd-brd-radius, 10px);
+    box-shadow: var(--wp--preset--shadow--natural, 6px 6px 9px rgba(0, 0, 0, 0.2));
+}
+
+/* Form Elements */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1 rem;
+}
+
+.comment-form label {
+    font-size: var(--wp--preset--font-size--medium, 1rem);
+    color: var(--wd-title-color, #242424);
+    font-weight: var(--wd-header-el-font-weight, 700);
+    text-transform: var(--wd-header-el-transform, uppercase);
+}
+
+.comment-form textarea,
+.comment-form input {
+    width: 100%;
+    padding: 0.75rem;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    text-align: left;
+    border-radius: 5px;
+}
+.comment-form select {
+    width: 100%;
+    padding: var(--wp--preset--spacing--20, 0.44rem);
+    border: var(--wd-form-brd-width, 1px) solid var(--wd-form-brd-color, rgba(0, 0, 0, 0.1));
+    border-radius: var(--wd-form-brd-radius, 5px);
+    font-size: var(--wp--preset--font-size--medium, 1rem);
+    background-color: var(--wd-form-bg, #fff);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.review p {
-    margin: 0.5rem 0;
+.comment-form textarea:focus,
+.comment-form input:focus,
+.comment-form select:focus {
+    border-color: var(--wd-form-brd-color-focus, rgba(0, 0, 0, 0.15));
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
 }
 
+/* Stars Rating */
+.comment-form .stars {
+    display: flex;
+    justify-content: center;
+    gap: var(--wp--preset--spacing--20, 0.44rem);
+}
+
+.comment-form .stars a {
+    font-size: var(--wp--preset--font-size--large, 1.5rem);
+    color: var(--color-gray-300, #bbb);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.comment-form .stars a:hover,
+.comment-form .stars a:hover ~ a {
+    color: #5C4033;
+}
+
+/* Submit Button */
+.comment-form .form-submit input[type="submit"] {
+    background-color: var(--btn-accented-bgcolor, #5C4033);
+    color: var(--btn-accented-color, #fff);
+    border: none;
+    padding: var(--wp--preset--spacing--40, 1rem) var(--wp--preset--spacing--50, 1.5rem);
+    border-radius: var(--btn-accented-brd-radius, 35px);
+    font-size: var(--wp--preset--font-size--medium, 1rem);
+    font-weight: var(--btn-font-weight, 600);
+    text-transform: var(--btn-transform, uppercase);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-form .form-submit input[type="submit"]:hover {
+    background-color: var(--btn-accented-bgcolor-hover, #936956);
+}
+.comment-form-cookies-consent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #5C4033; /* Dark Brown */
+    margin-top: 1rem;
+}
+
+.comment-form-cookies-consent input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    accent-color: #8B4513; /* Medium Brown */
+}
+
+.comment-form-cookies-consent label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #5C4033; /* Dark Brown */
+}
 
 /* Footer */
 footer {
     text-align: center;
     padding: 3vh 0;
-    background-color: #4CAF50; /* Green footer background */
-    color: #fff; /* White text for contrast */
+    background-color: #5C4033; /* Dark brown */
+    color: #FFF; /* White text */
     border-top: 2px solid #f0f0f0;
 }
 
@@ -333,10 +529,37 @@ footer p {
     font-size: 1rem;
 }
 
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-nav a {
+    color: #8B4513; /* Medium Brown */
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         gap: 2vh;
+    }
+    .slideshow-order {
+        flex-direction: column; /* Stacks elements vertically */
+        align-items: center; /* Centers content */
+    }
+
+    .slideshow, .order {
+        width: 100%; /* Ensures both sections take full width */
+        margin-bottom: 2rem; /* Adds space between them */
     }
 
     .order-content {
@@ -348,10 +571,7 @@ footer p {
         text-align: center;
     }
 
-    .slide img {
-        width: 80vw;
-        height: 40vh; /* Adjust for smaller screens */
-    }
+
 
     header .logo img {
         max-width: 25vw;
