@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
     color: #333;
     background-color: #f9f9f9;
 }
@@ -276,44 +276,221 @@ header {
     background-color: #45a049;
 }
 
-/* Wellness Section */
-.wellness {
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 5vh 5vw;
-    background-color: #4CAF50;
+    padding: 4rem 2rem;
+    background: rgba(0, 128, 0, 0.3); /* Matcha green overlay */
     color: #fff;
     border-radius: 10px;
+    margin: 2rem auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.hero-slideshow {
+    display: flex;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 }
 
-.wellness h2 {
+.hero-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero-slide img {
+    width: 30%;
+    border-radius: 1rem;
+}
+/* Quick, Easy, Delicious Section */
+.how-to {
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    padding: 5vh 5vw;
+}
+
+/* Mushroom Facts Section */
+.mushroom-facts {
+    padding: 4rem 2rem;
+    background-color: #2f6f32; /* Matcha's green color */
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.mushroom-facts h2 {
     font-size: 2rem;
-    margin-bottom: 2vh;
+    margin-bottom: 1rem;
 }
 
-.wellness p {
-    font-size: 1.2rem;
+.facts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
 }
+
+.fact {
+    text-align: center;
+    width: 200px;
+}
+
+.fact img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
 
 /* Reviews Section */
-.reviews {
+.woocommerce-Reviews {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -30px; /* Consistent spacing */
+    margin-bottom: -25px;
+    background-color: var(--wd-main-bgcolor, #fff); /* Default to white */
+    border-radius: var(--wd-brd-radius, 10px); /* Soft corners */
+    box-shadow: var(--wp--preset--shadow--natural, 6px 6px 9px rgba(0, 0, 0, 0.2)); /* Subtle shadow */
+    padding: 3rem 5rem;
+    line-height: var(--wd-text-line-height, 1.6);
+}
+
+/* Review Section Heading */
+.woocommerce-Reviews h2 {
+    font-size: var(--wp--preset--font-size--large, 1.5rem);
+    color: var(--wd-title-color, #242424);
+    margin-bottom: var(--wd-single-spacing, 25px);
     text-align: center;
-    padding: 5vh 5vw;
-    background-color: #f9f9f9;
 }
 
-.review {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #ffffff;
+
+/* Review Content */
+.wd-reviews-content {
+    flex: 1 1 100%;
+    margin-bottom: var(--wd-block-spacing, 20px);
+    text-align: center;
+    color: var(--wd-text-color, #777);
+}
+
+.woocommerce-noreviews {
+    font-size: var(--wp--preset--font-size--medium, 1rem);
+    color: var(--wd-text-color, #777);
+}
+
+/* Review Form Wrapper */
+#review_form_wrapper {
+    flex: 1 1 100%;
+    margin-top: var(--wd-single-spacing, 25px);
+    background-color: var(--bgcolor-gray-100, #f7f7f7);
+    border: var(--brdcolor-gray-200, 1px solid rgba(0, 0, 0, 0.075));
+    padding: var(--wd-block-spacing, 20px);
+    border-radius: var(--wd-brd-radius, 10px);
+    box-shadow: var(--wp--preset--shadow--natural, 6px 6px 9px rgba(0, 0, 0, 0.2));
+}
+
+/* Form Elements */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1 rem;
+}
+
+.comment-form label {
+    font-size: var(--wp--preset--font-size--medium, 1rem);
+    color: var(--wd-title-color, #242424);
+    font-weight: var(--wd-header-el-font-weight, 700);
+    text-transform: var(--wd-header-el-transform, uppercase);
+}
+
+.comment-form textarea,
+.comment-form input {
+    width: 100%;
+    padding: 0.75rem;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    text-align: left;
+    border-radius: 5px;
+}
+.comment-form select {
+    width: 100%;
+    padding: var(--wp--preset--spacing--20, 0.44rem);
+    border: var(--wd-form-brd-width, 1px) solid var(--wd-form-brd-color, rgba(0, 0, 0, 0.1));
+    border-radius: var(--wd-form-brd-radius, 5px);
+    font-size: var(--wp--preset--font-size--medium, 1rem);
+    background-color: var(--wd-form-bg, #fff);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.review p {
-    margin: 0.5rem 0;
+.comment-form textarea:focus,
+.comment-form input:focus,
+.comment-form select:focus {
+    border-color: var(--wd-form-brd-color-focus, rgba(0, 0, 0, 0.15));
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
 }
 
+/* Stars Rating */
+.comment-form .stars {
+    display: flex;
+    justify-content: center;
+    gap: var(--wp--preset--spacing--20, 0.44rem);
+}
+
+.comment-form .stars a {
+    font-size: var(--wp--preset--font-size--large, 1.5rem);
+    color: var(--color-gray-300, #bbb);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.comment-form .stars a:hover,
+.comment-form .stars a:hover ~ a {
+    color: #45a049;
+}
+
+/* Submit Button */
+.comment-form .form-submit input[type="submit"] {
+    background-color: var(--btn-accented-bgcolor, #4CAF50);
+    color: var(--btn-accented-color, #fff);
+    border: none;
+    padding: var(--wp--preset--spacing--40, 1rem) var(--wp--preset--spacing--50, 1.5rem);
+    border-radius: var(--btn-accented-brd-radius, 35px);
+    font-size: var(--wp--preset--font-size--medium, 1rem);
+    font-weight: var(--btn-font-weight, 600);
+    text-transform: var(--btn-transform, uppercase);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-form .form-submit input[type="submit"]:hover {
+    background-color: var(--btn-accented-bgcolor-hover, #45a049);
+}
+.comment-form-cookies-consent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #4CAF50; /* Green */
+    margin-top: 1rem;
+}
+
+.comment-form-cookies-consent input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    accent-color: #66ec6a; /* Green */
+}
+
+.comment-form-cookies-consent label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #4CAF50; /* Green */
+}
 /* Footer */
 footer {
     text-align: center;
@@ -332,6 +509,15 @@ footer p {
         flex-direction: column;
         gap: 2vh;
     }
+    .slideshow-order {
+        flex-direction: column; /* Stacks elements vertically */
+        align-items: center; /* Centers content */
+    }
+
+    .slideshow, .order {
+        width: 100%; /* Ensures both sections take full width */
+        margin-bottom: 2rem; /* Adds space between them */
+    }
 
     .order-content {
         flex-direction: column;
@@ -342,12 +528,41 @@ footer p {
         text-align: center;
     }
 
-    .slide img {
-        width: 80vw;
-        height: 40vh;
-    }
+
 
     header .logo img {
         max-width: 25vw;
     }
+    /* Mushroom Facts */
+    .fact {
+        text-align: center;
+        max-width: 120px; /* Matches the max width of the image */
+        margin: 0 auto; /* Centers the text */
+    }
+    .facts-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+
+    .fact img {
+        width: 100%;
+        height: auto;
+        max-width: 120px; /* Ensures images have a consistent max width */
+        margin: 0 auto 0.5rem; /* Centers image and adds spacing below it */
+        border-radius: 8px; /* Adds a subtle rounded border for aesthetics */
+    }
+
+    .fact h3 {
+        font-size: 1rem;
+        margin: 0.5rem 0; /* Adds spacing between the header and text */
+        word-wrap: break-word; /* Ensures long words break properly */
+    }
+
+    .fact p {
+        font-size: 0.9rem;
+        line-height: 1.2; /* Adjust line height for better readability */
+        margin: 0; /* Removes unnecessary margins */
+    }
+    
 }

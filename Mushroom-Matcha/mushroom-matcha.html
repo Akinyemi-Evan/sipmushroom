@@ -42,17 +42,9 @@
                 <div class="slideshow-container">
                     <div class="slide active">
                         <img src="../Pictures/matcha1.png" alt="Calm Energy">
-                        <div class="info">
-                            <h2>Calm Energy</h2>
-                            <p>Focus and relax with every sip.</p>
-                        </div>
                     </div>
                     <div class="slide">
                         <img src="../Pictures/matcha2.png" alt="Antioxidant Rich">
-                        <div class="info">
-                            <h2>Antioxidant Rich</h2>
-                            <p>Boost your health naturally.</p>
-                        </div>
                     </div>
                 </div>
                 <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -77,14 +69,165 @@
                 </div>
             </div>
         </section>
-        <section id="wellness" class="wellness">
-            <h2>Wellness Benefits</h2>
-            <p>Blend of matcha and mushroom designed for mental clarity and immune support.</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Fuel Your Day with Mushroom Coffee</h2>
+                <div class="hero-slideshow">
+                    <!-- Slide 1 -->
+                    <div class="hero-slide">
+                        <img src="../Pictures/mushroom-coffee4.webp" alt="Enjoy with Friends">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="hero-slide">
+                        <img src="../Pictures/mushroom-coffee5.webp" alt="Vegan Blend">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="hero-slide">
+                        <img src="../Pictures/mushroom-coffee1.webp" alt="Rich Flavor">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="hero-slide">
+                        <img src="../Pictures/mushroom-coffee3.webp" alt="Plenty of Mushroom">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="hero-slide">
+                        <img src="../Pictures/mushroom-coffee2.webp" alt="Convenience">
+                    </div>
+                </div>
+                <p class="hero-description">
+                    <strong>Elevated Energy:</strong> Smooth, sustained energy boost without jitters or crashes.
+                    <br>
+                    <strong>Premium Quality:</strong> Organic, sustainable, and planet-friendly.
+                    <br>
+                    <strong>Rich, Robust Flavor:</strong> A blend of premium coffee and earthy mushroom notes.
+                    <br>
+                    <strong>Easy & Convenient:</strong> Perfectly integrates into your daily routine.
+                </p>
+            </div>
         </section>
-        <section id="reviews" class="reviews">
-            <h2>Customer Reviews</h2>
-            <div id="reviews-container">
-                <p>Loading reviews...</p>
+
+         <!-- Quick, Easy, Delicious Section -->
+         <section id="how-to" class="how-to">
+            <div class="how-to-content">
+                <img src="Pictures/wooden-spoon.jpg" alt="How to Video" />
+                <div class="how-to-steps">
+                    <h2>Quick, Easy, Delicious.</h2>
+                    <ol>
+                        <li>Add 1 tbsp of LaTonique Mushroom Coffee.</li>
+                        <li>Pour 8-10 ounces of hot or cold water.</li>
+                        <li>Stir it up with a spoon.</li>
+                        <li>Add any creamer or sweetener you'd like.</li>
+                        <li>Enjoy the deliciousness!.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mushroom Facts Section -->
+        <section class="mushroom-facts">
+            <h2>Mushroom Facts</h2>
+            <div class="facts-container">
+                <div class="fact">
+                    <img src="../Pictures/Cordyceps.jpg" alt="Cordyceps">
+                    <h3>Cordyceps</h3>
+                    <p>Boosts energy and enhances endurance.</p>
+                </div>
+                <div class="fact">
+                    <img src="../Pictures/Reishi.jpg" alt="Reishi">
+                    <h3>Reishi</h3>
+                    <p>Supports immunity and stress relief.</p>
+                </div>
+                <div class="fact">
+                    <img src="../Pictures/Chaga.jpg" alt="Chaga">
+                    <h3>Chaga</h3>
+                    <p>Rich in antioxidants and supports digestion.</p>
+                </div>
+            </div>
+        </section>
+
+       
+
+        <!-- Customer Reviews Section -->
+        <section id="reviews" class="woocommerce-Reviews">
+            <div id="comments">
+                <div class="wd-reviews-heading">
+                    <div class="wd-reviews-tools">
+                        <h2 class="woocommerce-Reviews-title">Customer Reviews</h2>
+                    </div>
+                </div>
+        
+                <div class="wd-reviews-content wd-sticky">
+                    <p class="woocommerce-noreviews">There are no reviews yet.</p>
+                </div>
+        
+                <div class="wd-loader-overlay wd-fill"></div>
+            </div>
+        
+            <div id="review_form_wrapper" class="wd-form-pos-after">
+                <div id="review_form">
+                    <div id="respond" class="comment-respond">
+                        <span id="reply-title" class="comment-reply-title">
+                            Be the first to review “Mushroom Coffee – 30 Servings”
+                            <small>
+                                <a rel="nofollow" id="cancel-comment-reply-link" href="/product/mushroom-coffee-30-servings/#respond" style="display:none;">
+                                    Cancel reply
+                                </a>
+                            </small>
+                        </span>
+                        <form action="https://latonique.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+                            <p class="comment-notes">
+                                <span id="email-notes">Your email address will not be published.</span>
+                                <span class="required-field-message">
+                                    Required fields are marked <span class="required">*</span>
+                                </span>
+                            </p>
+                            <div class="comment-form-rating">
+                                <label for="rating">Your rating&nbsp;<span class="required">*</span></label>
+                                <p class="stars">
+                                    <span>
+                                        <a class="star-1" href="#">1</a>
+                                        <a class="star-2" href="#">2</a>
+                                        <a class="star-3" href="#">3</a>
+                                        <a class="star-4" href="#">4</a>
+                                        <a class="star-5" href="#">5</a>
+                                    </span>
+                                </p>
+                                <select name="rating" id="rating" required="" style="display: none;">
+                                    <option value="">Rate…</option>
+                                    <option value="5">Perfect</option>
+                                    <option value="4">Good</option>
+                                    <option value="3">Average</option>
+                                    <option value="2">Not that bad</option>
+                                    <option value="1">Very poor</option>
+                                </select>
+                            </div>
+                            <p class="comment-form-comment">
+                                <label for="comment">Your review&nbsp;<span class="required">*</span></label>
+                                <textarea id="comment" name="comment" cols="45" rows="8" required=""></textarea>
+                            </p>
+                            <p class="comment-form-author">
+                                <label for="author">Name&nbsp;<span class="required">*</span></label>
+                                <input id="author" name="author" type="text" value="" size="30" required="">
+                            </p>
+                            <p class="comment-form-email">
+                                <label for="email">Email&nbsp;<span class="required">*</span></label>
+                                <input id="email" name="email" type="email" value="" size="30" required="">
+                            </p>
+                            <p class="comment-form-cookies-consent">
+                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+                                <label for="wp-comment-cookies-consent">
+                                    Save my name, email, and website in this browser for the next time I comment.
+                                </label>
+                            </p>
+                            <p class="form-submit">
+                                <input name="submit" type="submit" id="submit" class="submit" value="Submit">
+                                <input type="hidden" name="comment_post_ID" value="10415" id="comment_post_ID">
+                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                            </p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
