@@ -33,15 +33,16 @@ function addToCart(itemName, itemPrice) {
 
 let cart = [];
 
-function addToCart(item, price) {
-    cart.push({ item, price });
+function addToCart(itemName, itemPrice) {
+    cart.push({ itemName, itemPrice });
     updateCartPopup();
+    alert(`${itemName} added to cart at $${itemPrice.toFixed(2)}`);
 }
 
 function updateCartPopup() {
     const cartPopup = document.querySelector('.cart-popup');
-    const cartContent = cart.map(cartItem => `<p>${cartItem.item} - $${cartItem.price.toFixed(2)}</p>`).join('');
-    const cartTotal = cart.reduce((total, cartItem) => total + cartItem.price, 0);
+    const cartContent = cart.map(cartItem => `<p>${cartItem.itemName} - $${cartItem.itemPrice.toFixed(2)}</p>`).join('');
+    const cartTotal = cart.reduce((total, cartItem) => total + cartItem.itemPrice, 0);
 
     cartPopup.innerHTML = cart.length
         ? `${cartContent}<p><strong>Total: $${cartTotal.toFixed(2)}</strong></p><a href="cart.html" class="view-cart">View Cart</a>`

@@ -317,8 +317,7 @@ header {
 /* Mushroom Facts Section */
 .mushroom-facts {
     padding: 4rem 2rem;
-    background-color: #2f6f32; /* Matcha's green color */
-    color: #fff;
+    color: #45a049;
     border-radius: 10px;
     text-align: center;
 }
