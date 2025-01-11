@@ -47,6 +47,27 @@ function updateCartPopup() {
         ? `${cartContent}<p><strong>Total: $${cartTotal.toFixed(2)}</strong></p><a href="cart.html" class="view-cart">View Cart</a>`
         : `<p>Your cart is empty</p><a href="cart.html" class="view-cart">View Cart</a>`;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const cart = document.querySelector('.cart');
+    const cartPopup = document.querySelector('.cart-popup');
+
+    // Show popup when hovering over the cart
+    cart.addEventListener('mouseenter', () => {
+        cartPopup.style.display = 'block';
+    });
+
+    // Keep popup open while inside it
+    cartPopup.addEventListener('mouseenter', () => {
+        cartPopup.style.display = 'block';
+    });
+
+    // Hide popup when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!cart.contains(e.target)) {
+            cartPopup.style.display = 'none';
+        }
+    });
+});
 
 function toggleNav() {
     const navDrawer = document.getElementById('nav-drawer');
