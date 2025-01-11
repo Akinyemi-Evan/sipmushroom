@@ -40,8 +40,8 @@ function updateCartPopup() {
     const cartTotal = cart.reduce((total, cartItem) => total + cartItem.itemPrice, 0);
 
     cartPopup.innerHTML = cart.length
-        ? `${cartContent}<p><strong>Total: $${cartTotal.toFixed(2)}</strong></p><a href="cart.html" class="view-cart">View Cart</a>`
-        : `<p>Your cart is empty</p><a href="cart.html" class="view-cart">View Cart</a>`;
+        ? `${cartContent}<p><strong>Total: $${cartTotal.toFixed(2)}</strong></p><a href="../Cart/cart.html" class="view-cart">View Cart</a>`
+        : `<p>Your cart is empty</p><a href="../Cart/cart.html" class="view-cart">View Cart</a>`;
 }
 document.addEventListener('DOMContentLoaded', () => {
     const cart = document.querySelector('.cart');

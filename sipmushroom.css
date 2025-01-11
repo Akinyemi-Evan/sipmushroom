@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
     background: #ffffff; /* White background */
     color: #5C4033; /* Neutral text color */
     overflow-x: hidden;
@@ -14,12 +14,12 @@ body {
 
 /* Header */
 header {
-    background-color: #fff; /* White header */
+    background-color: #4CAF50; /* White header */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    border-bottom: 2px solid #28A745; /* Green accent */
+    border-bottom: 2px solid white; /* Green accent */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -42,7 +42,7 @@ header {
 .menu-icon span {
     width: 25px;
     height: 3px;
-    background: #A32CC4; /* Purple accent */
+    background: #fff; /* Purple accent */
     border-radius: 2px;
 }
 
@@ -59,7 +59,7 @@ header {
 
 .logo h1 {
     font-size: 1.8rem;
-    color: #28A745; /* Green text */
+    color: white; /* white text */
     margin-top: 0.5rem;
 }
 
@@ -224,9 +224,28 @@ header {
 
 /* Footer */
 footer {
-    background-color: #28A745; /* Green background */
-    color: white;
     text-align: center;
-    padding: 1rem;
-    border-top: 3px solid #A32CC4; /* Purple border */
+    padding: 3vh 0;
+    background-color: #4CAF50; /* Bright green */
+    color: #ffffff;
+    border-top: 2px solid #f0f0f0;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-nav a {
+    color: #ffffff; /* Soft green for links */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #f0f0f0; /* White for hover effect */
+    text-decoration: underline;
 }
