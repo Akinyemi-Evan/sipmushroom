@@ -74,48 +74,120 @@ header {
     height: 2rem;
     cursor: pointer;
 }
-
+/* Cart Popup Styling */
 .cart-popup {
     display: none;
     position: absolute;
     top: 110%;
     right: 0;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    background-color: #fff; /* White background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 5px; /* Rounded corners */
     padding: 1rem;
-    text-align: left;
     z-index: 10;
-    width: 200px;
-}
-
-.cart:hover .cart-popup {
-    display: block;
-}
-
-.cart-popup p {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    width: 250px; /* Fixed width for consistent layout */
+    max-height: 300px; /* Limit height for overflow */
+    overflow-y: auto; /* Add scroll if content overflows */
+    font-family: 'Playfair Display', 'Georgia', serif;
     color: #333;
 }
 
-.cart-popup .view-cart {
-    display: inline-block;
-    margin-top: 0.5rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #4CAF50;
-    border: 1px solid #4CAF50;
+/* Individual Cart Item */
+.cart-popup .cart-item {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap within the container */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd; /* Divider for items */
+    word-wrap: break-word; /* Ensure long text wraps */
+}
+
+.cart-popup .cart-item:last-child {
+    border-bottom: none; /* Remove divider from last item */
+    margin-bottom: 0;
+}
+
+/* Product Name and Price on One Line */
+.cart-popup .cart-item p {
+    flex: 1; /* Allow product details to take up remaining space */
+    margin: 0;
+    font-size: 0.85rem; /* Slightly smaller text for better fit */
+    line-height: 1.2; /* Adjust line height for readability */
+    color: #333; /* Neutral text */
+    text-align: left;
+}
+
+/* Quantity Controls */
+.cart-popup .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem; /* Smaller gap for compact layout */
+    flex-shrink: 0; /* Prevent shrinking of controls */
+    padding: 0.25rem 0.8rem; /* Compact padding */
+}
+
+.cart-popup .quantity-controls button {
+    color: #4CAF50; /* Bright green for buttons */
+    border: none;
     border-radius: 5px;
-    padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
+    background-color: transparent; /* Transparent background for cleaner look */
+    font-size: 0.8rem; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-popup .quantity-controls button:hover {
+    background-color: #e0ffe0; /* Light green on hover */
+}
+
+/* Quantity Number */
+.cart-popup .quantity-controls span {
+    font-size: 0.8rem; /* Match button size */
+    font-weight: bold;
+    color: #333; /* Neutral text */
+}
+
+/* Remove Button */
+.cart-popup .remove-btn {
+    background: transparent;
+    border: none;
+    color: #FF6B6B; /* Soft red for remove button */
+    font-size: 0.8rem; /* Smaller font size */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    flex-shrink: 0; /* Ensure it stays in bounds */
+}
+
+.cart-popup .remove-btn:hover {
+    color: #FF3B3B; /* Brighter red */
+}
+
+/* Total and View Cart Button */
+.cart-popup p strong {
+    font-size: 0.9rem;
+    color: #333; /* Neutral for totals */
+}
+
+.cart-popup .view-cart {
+    display: block;
+    text-align: center;
+    background-color: #4CAF50; /* Bright green */
+    color: #fff; /* White text */
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .cart-popup .view-cart:hover {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #45a049; /* Slightly darker green */
+    color: #fff; /* White text */
 }
+
 
 /* Navigation Drawer */
 #nav-drawer {

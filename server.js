@@ -76,6 +76,37 @@ app.get('/orders', async (req, res) => {
   }
 });
 
+const ReviewSchema = new mongoose.Schema({
+    productId: String,
+    author: String,
+    rating: Number,
+    comment: String,
+    date: { type: Date, default: Date.now },
+});
+const Review = mongoose.model('Review', ReviewSchema);
+
+app.post('/reviews', async (req, res) => {
+    try {
+        const review = new Review(req.body);
+        await review.save();
+        res.json({ success: true, review });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+app.get('/reviews/:productId', async (req, res) => {
+    try {
+        const reviews = await Review.find({ productId: req.params.productId });
+        res.json(reviews);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+
 // Start Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

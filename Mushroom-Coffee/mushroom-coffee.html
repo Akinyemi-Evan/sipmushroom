@@ -29,6 +29,15 @@
                 <div class="cart-popup">
                     <p>Your cart is empty</p>
                     <a href="../Cart/cart.html" class="view-cart">View Cart</a>
+                    <div class="cart-item">
+                        <p>${item.itemName} - $${(item.itemPrice * item.quantity).toFixed(2)}</p>
+                        <div class="quantity-controls">
+                            <button class="decrease-btn" data-index="${index}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="increase-btn" data-index="${index}">+</button>
+                        </div>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    </div>
                 </div>
             </div>
         </div>
