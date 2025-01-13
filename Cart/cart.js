@@ -177,7 +177,7 @@ function renderCartItems() {
     cart.forEach((item, index) => {
         total += item.itemPrice * item.quantity;
         cartItemsContainer.innerHTML += `
-            <div class="cart-item">
+            <div class="cart-items">
                 <p>${item.itemName}</p>
                 <div class="quantity-controls">
                     <button class="decrease-btn" data-index="${index}">-</button>
@@ -185,7 +185,9 @@ function renderCartItems() {
                     <button class="increase-btn" data-index="${index}">+</button>
                 </div>
                 <p>$${(item.itemPrice * item.quantity).toFixed(2)}</p>
-                <button onclick="removeItem(${index})">Remove</button>
+                <button class="remove-btn"
+                    <button onclick="removeItem(${index})">Remove</button>
+                </button>
             </div>
         `;
     });

@@ -49,7 +49,14 @@
     <main>
         <section class="cart-section">
             <h2>Your Cart</h2>
-            <div id="cart-items"></div>
+            <div id="cart-items">
+                <div class="quantity-controls">
+                    <button class="decrease-btn" data-index="0">-</button>
+                    <span>3</span>
+                    <button class="increase-btn" data-index="0">+</button>
+                </div>
+                <button class="remove-btn" data-index="0">Remove</button>
+            </div>
             <div class="cart-total">
                 <p><strong>Total:</strong> $<span id="total-amount">0.00</span></p>
                 <button id="checkout-button">Proceed to Checkout</button>
