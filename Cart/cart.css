@@ -10,6 +10,12 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
+body, html {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Full viewport height */
+    margin: 0;
+}
 
 header {
     background-color: #4CAF50;
@@ -258,6 +264,7 @@ main {
 #cart-summary {
     text-align: right;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 #checkout-button {
@@ -267,11 +274,21 @@ main {
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 5px;
+    margin-top: 2rem;
 }
 
 #checkout-button:hover {
     background-color: #45a049;
 }
+
+main {
+    flex: 1; /* Allow the main area to grow and push the footer down */
+    display: flex;
+    flex-direction: column; /* For future flexibility if needed */
+    justify-content: center; /* Center content if there's not much */
+    padding: 1rem;
+}
+
 
 /* Footer */
 footer {
@@ -280,6 +297,7 @@ footer {
     background-color: #4CAF50; /* Bright green */
     color: #ffffff;
     border-top: 2px solid #f0f0f0;
+    margin-top: auto; /* Push footer to the bottom */
 }
 
 .footer-nav {
