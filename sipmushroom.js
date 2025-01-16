@@ -1,27 +1,32 @@
 let currentIndex = 0;
 
-function moveCarousel(direction) {
-    const carouselImages = document.querySelector('.carousel-images');
-    const images = document.querySelectorAll('.carousel-images img');
-    const totalImages = images.length;
+let heroIndex = 0;
 
-    // Update currentIndex
-    currentIndex += direction;
-
-    // Wrap around carousel
-    if (currentIndex < 0) {
-        currentIndex = totalImages - 1;
-    } else if (currentIndex >= totalImages) {
-        currentIndex = 0;
-    }
-
-    // Move carousel
-    const offset = -currentIndex * 100; // 100% width per image
-    carouselImages.style.transform = `translateX(${offset}%)`;
+function showHeroSlide() {
+    const slides = document.querySelectorAll('.hero-slide');
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === heroIndex) slide.classList.add('active');
+    });
+    heroIndex = (heroIndex + 1) % slides.length;
 }
 
-// Auto-rotate carousel every 5 seconds
-setInterval(() => moveCarousel(1), 5000);
+setInterval(showHeroSlide, 5000);
+
+
+let mushroomIndex = 0;
+
+function showMushroomSlide() {
+    const slides = document.querySelectorAll('.mushroom-slide');
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === mushroomIndex) slide.classList.add('active');
+    });
+    mushroomIndex = (mushroomIndex + 1) % slides.length;
+}
+
+setInterval(showMushroomSlide, 5000);
+
 
 
 // Add to Cart Functionality
@@ -173,4 +178,11 @@ function closeNavOnOutsideClick(event) {
 }
 
 
+document.querySelectorAll('.footer-links a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').slice(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+    });
+});
 
