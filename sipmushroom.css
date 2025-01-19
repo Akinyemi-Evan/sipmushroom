@@ -1,5 +1,5 @@
 /* General Reset */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -236,7 +236,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60vh;
+    height: auto;
 }
 
 .hero-content {
@@ -246,10 +246,11 @@ header {
 }
 
 .hero-slideshow {
-    width: 40%;
+    max-width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .hero-slide {
@@ -258,8 +259,8 @@ header {
     height: auto;
 }
 .hero-slide img{
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 1rem;
 }
@@ -383,4 +384,44 @@ footer {
 .footer-nav a:hover {
     color: #f0f0f0; /* White for hover effect */
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content, .hero-slideshow {
+        max-width: 100%;
+    }
+
+    .mushroom-overview, .mushroom-overview-content {
+        max-width: 100%;
+    }
+
+    .mushroom-slideshow {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .mushroom-slide img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    .mushroom-description {
+        max-width: 100%;
+    }
+
+    .product-grid {
+        flex-direction: column;
+    }
+
+    .collage {
+        grid-template-columns: repeat(auto-fit, minmax(10vh, 1fr));
+    }
+
+    .collage-item img, .collage-item video {
+        height: 10vh;
+    }
 }
